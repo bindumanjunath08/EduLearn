@@ -1,0 +1,271 @@
+{
+  "Users": [
+    {
+      "name": "Naveen Kumar K",
+      "username": "2860436",
+      "email": "280436@vikes.scuohio.edu",
+      "role": "Student",
+      "password": "123",
+      "classes_joined": [
+        1,
+        4
+      ],
+      "id": 1
+    },
+    {
+      "name": "Bindu Manjunath Raju",
+      "username": "2862245",
+      "email": "2862245@vikes.scuohio.edu",
+      "role": "Teacher",
+      "password": "123",
+      "classes_joined": [
+        1,
+        4
+      ],
+      "id": 2
+    },
+    {
+      "name": "studenttest",
+      "username": "12345",
+      "email": "12345@gmail.com",
+      "role": "Student",
+      "password": "123",
+      "classes_joined": [
+        2,
+        2
+      ],
+      "id": 3
+    },
+    {
+      "name": "professortest",
+      "username": "5678",
+      "email": "5678@gmail.com",
+      "role": "Teacher",
+      "password": "123",
+      "classes_joined": [
+        2,
+        3
+      ],
+      "id": 4
+    },
+    {
+      "name": "STUDENT",
+      "username": "1234",
+      "email": "1234@GMAIL.COM",
+      "role": "Student",
+      "password": "123",
+      "classes_joined": [
+        3
+      ],
+      "id": 5
+    },
+    {
+      "name": "PROFESSOR",
+      "username": "5678",
+      "email": "5678@GMAIL.COM",
+      "role": "Teacher",
+      "password": "123",
+      "classes_joined": [],
+      "id": 6
+    }
+  ],
+  "classes": [
+    {
+      "class_name": "Software engineering",
+      "branch": "SE",
+      "class_code": "SE101",
+      "faculty_name": "Bindu Manjunath Raju",
+      "students": [
+        1
+      ],
+      "students_count": 0,
+      "assignment_list": [
+        1,
+        2
+      ],
+      "notes_list": [
+        1
+      ],
+      "feedback": [
+        "Hello Professor, The assignment feels like lengthy and might be it need to be given more time to solve and that would be great. Thank You "
+      ],
+      "id": 1,
+      "student_count": null
+    },
+    {
+      "class_name": "SE",
+      "branch": "SE",
+      "class_code": "SE",
+      "faculty_name": "professortest",
+      "students": [
+        3,
+        3
+      ],
+      "assignment_list": [
+        3,
+        4
+      ],
+      "notes_list": [],
+      "feedback": [
+        "understanding the software development cycle"
+      ],
+      "id": 2,
+      "student_count": null
+    },
+    {
+      "class_name": "CS",
+      "branch": "CS",
+      "class_code": "123",
+      "faculty_name": "professortest",
+      "students": [
+        5
+      ],
+      "assignment_list": [
+        5,
+        6
+      ],
+      "notes_list": [],
+      "feedback": [
+        "good"
+      ],
+      "id": 3,
+      "student_count": null
+    },
+    {
+      "class_name": "CS",
+      "branch": "CS",
+      "class_code": "CS",
+      "faculty_name": "Bindu Manjunath Raju",
+      "students": [
+        1
+      ],
+      "assignment_list": [],
+      "notes_list": [],
+      "feedback": [],
+      "id": 4,
+      "student_count": null
+    }
+  ],
+  "assignments": [
+    {
+      "name": "Assignment 1 ",
+      "description": "I this assignment u have to follow the instructions provided in the direction File.",
+      "input_file": "https://cdn.filestackcontent.com/ADsRnNbqTF2iBwtQNedi",
+      "class_id": 1,
+      "submitted_by": [
+        1
+      ],
+      "id": 1
+    },
+    {
+      "name": "Assignment 2",
+      "description": "This evaluates your Project",
+      "input_file": "https://cdn.filestackcontent.com/qyxnV0XgQeCP7jSoDIvq",
+      "class_id": 1,
+      "submitted_by": [],
+      "id": 2
+    },
+    {
+      "name": "final project",
+      "description": "30% ",
+      "input_file": "https://cdn.filestackcontent.com/az4yuqBS02pHzjyWmzXS",
+      "class_id": 2,
+      "submitted_by": [
+        3
+      ],
+      "id": 3
+    },
+    {
+      "name": "abc",
+      "description": "abc",
+      "input_file": "https://cdn.filestackcontent.com/lRPMmyCRviyvlXgCZBVc",
+      "class_id": 2,
+      "submitted_by": [
+        3
+      ],
+      "id": 4
+    },
+    {
+      "name": "PROJECT",
+      "description": "30% WEIGHTAGE",
+      "input_file": "https://cdn.filestackcontent.com/czpPaE1aQuOdDDc68r6j",
+      "class_id": 3,
+      "submitted_by": [
+        5
+      ],
+      "id": 5
+    },
+    {
+      "name": "abc",
+      "description": "abc",
+      "input_file": "https://cdn.filestackcontent.com/hLbEO0f2QlmetvKIqO5N",
+      "class_id": 3,
+      "submitted_by": [
+        5
+      ],
+      "id": 6
+    }
+  ],
+  "notes": [
+    {
+      "name": "Study material 1",
+      "description": "Chapters 1 to 10",
+      "input_file": "https://cdn.filestackcontent.com/ivOCjfq0RBiV4oQjExus",
+      "class_code": 1,
+      "submitted_by": 0,
+      "id": 1
+    }
+  ],
+  "submitted_by": [
+    {
+      "file_path": "https://cdn.filestackcontent.com/74VH13kjSmGtRt1JPdSB",
+      "marks": "9/10",
+      "remarks": "Everything is Good but some improvements can be done",
+      "teacher_viewed": "Viewed",
+      "student_id": 1,
+      "assignmentid": 1,
+      "submitted_date": "15/0/2019",
+      "id": 1
+    },
+    {
+      "file_path": "https://cdn.filestackcontent.com/QaOfL6jSIqy8iNgINAYv",
+      "marks": 0,
+      "remarks": "Yet to be Corrected",
+      "teacher_viewed": "No",
+      "student_id": 3,
+      "assignmentid": 3,
+      "submitted_date": "15/0/2019",
+      "id": 2
+    },
+    {
+      "file_path": "https://cdn.filestackcontent.com/4z69bWqT2GMzAaNCoypW",
+      "marks": "90",
+      "remarks": "Good",
+      "teacher_viewed": "Viewed",
+      "student_id": 3,
+      "assignmentid": 4,
+      "submitted_date": "15/0/2019",
+      "id": 3
+    },
+    {
+      "file_path": "https://cdn.filestackcontent.com/umaAxcLnQ56F0dq7yW6C",
+      "marks": 0,
+      "remarks": "Yet to be Corrected",
+      "teacher_viewed": "No",
+      "student_id": 5,
+      "assignmentid": 5,
+      "submitted_date": "15/0/2019",
+      "id": 4
+    },
+    {
+      "file_path": "https://cdn.filestackcontent.com/f0RK6e66QwmeSqdMdYIl",
+      "marks": "100",
+      "remarks": "good",
+      "teacher_viewed": "Viewed",
+      "student_id": 5,
+      "assignmentid": 6,
+      "submitted_date": "15/0/2019",
+      "id": 5
+    }
+  ]
+}

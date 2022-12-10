@@ -1,0 +1,46 @@
+
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;"><br><br>
+  <div>
+    <div *ngIf="CheckLoginStatus()">
+      <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+    </div>
+  </div>
+
+
+  <div  style="justify-content: center;display:flex;">
+    
+  <div><h2 >Name: {{thisuser.name}}</h2>
+<h2 >University Number: {{thisuser.username}}</h2>
+<h4>Assignment submitted on: {{thisass.submitted_date}}</h4>
+<h4>Assignment submitted download: <a (click)="updatemarks()" href="{{thisass.file_path}}" target="_blank">View
+        file</a></h4>
+<form>
+
+    <div class="form-group">
+        <label for="marks">Marks</label>
+        <input type="text" class="form-control" [(ngModel)]="thisass.marks" name="marks">
+    </div>
+    <div class="mb-3">
+        <label for="remarks">Remarks</label>
+        <input type="text" class="form-control" [(ngModel)]="thisass.remarks" name="remarks">
+    </div>
+
+
+    <button routerLink="/rewardassignment/{{this.id}}" style='margin-left:16px; width:100px'class="btn btn-secondary">Back</button>
+    <button style='float: right;margin-right:8px; width:100px'type="submit" class="btn btn-success" (click)="updatemarks()">Update</button>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,97 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;"><br><br>
+</div>
+<div *ngIf="CheckLoginStatus()" class="col-md-12 ">
+        <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+      <br><br>
+    <p align="right"><button type="button"  class="btn float-left col-md-3 btn-success"><a
+        routerLink="/createassignment" class="nav-link px-2 link-dark">Create Assignment</a></button></p>
+    <p align="right"><button type="button"  class="btn col-md-3 float-right btn-success"><a
+        routerLink="/addnotes" class="nav-link px-2 link-dark">Upload notes</a></button></p>
+        </div>
+        <div>
+    <div class="container ">
+        <div class="col-md-6 float-left ">
+
+            <div *ngFor="let classeslist of ass1">
+                <br><br><br>
+                <div class="col-md-12 card shadow-sm container-fluid">
+                    <div class="row">
+                        <!-- <img src={{product.imagepath}} width="360" height="200"> -->
+
+                        <div class="col-md-8">
+                            <h4 style="color:rgb(0, 4, 4);">Assignment Name: {{classeslist.name}}</h4>
+                            <h5 style="color:rgb(7, 2, 14);">Description: {{classeslist.description}}</h5>
+
+                            <p class="card-text">Direction file: <a href={{classeslist.input_file}}
+                                    target="_blank">Download</a><br>
+                            </p>
+
+
+                        </div>
+                        <div *ngIf="!CheckIsAdmin()">
+                                <a [routerLink]="['/assignment/viewassignment',classeslist.id]"
+                                    class="btn col-md-12 btn-success">
+                                    Submit assignment</a><br><br>
+
+                                <!-- <a [routerLink]="['/classes/feedback',classeslist.id]"
+                                    class="btn col-md-12 btn-info">
+                                    Give Anonymous Feedback for the class</a>
+                                    <br><br> -->
+                        </div>
+                        <div *ngIf="CheckIsAdmin()">
+                            <div class="col-md-4 float-right">
+                                <a [routerLink]="['/rewardassignment',classeslist.id]"
+                                    class="btn col-md-12 btn-success">
+                                    Reward</a>
+                                    <br><br>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 float-right ">
+        <br><br><br>
+            <div *ngFor="let classeslist of notes1">
+                <div class="col-md-12 card shadow-sm container-fluid">
+                    <div class="row">
+                        <!-- <img src={{product.imagepath}} width="360" height="200"> -->
+
+                        <div class="col-md-8">
+                            <h4 style="color:rgb(1, 10, 11);">Assignment Name: {{classeslist.name}}</h4>
+                            <h5 style="color:rgb(3, 0, 6);">Description: {{classeslist.description}}</h5>
+<!-- 
+                            <p class="card-text">Direction file: <a href={{classeslist.input_file}}
+                                    target="_blank">Download</a><br></p> -->
+                            <div *ngIf="CheckIsAdmin()" class="col-md-12 ">
+                                <p class="card-text">Downloaded by: {{classeslist.downloaded_by}}<br></p>
+                            </div>
+
+                        </div>
+                        <div *ngIf="!CheckIsAdmin()">
+                                <a href={{classeslist.input_file}} (click)="downloaded(classeslist.id)" class="btn col-md-12 btn-success">
+                                    Download Notes</a>
+                              <br> <br>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

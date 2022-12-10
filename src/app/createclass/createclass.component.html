@@ -1,0 +1,42 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;">
+<div>
+    <div *ngIf="CheckLoginStatus()">
+      <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+    </div>
+  </div>
+<br><br><br><br><br><br><div  style="justify-content: center;display:flex;">
+    
+    <form>
+
+    <div class="form-group">
+        <label style='margin-left:10px;'for="class_name">Course Name</label>
+        <input style='margin-left:10px; width:450px' type="text" class="form-control" [(ngModel)]="product.class_name" name="class_name">
+    </div>
+    <div class="mb-3">
+        <label style='margin-left:10px;' for="branch">Branch</label>
+        <input style='margin-left:10px; width:450px' type="text" class="form-control" [(ngModel)]="product.branch" name="branch">
+    </div>
+    <div class="mb-3">
+        <label style='margin-left:10px;'for="class_code">Course code:</label>
+        <input style='margin-left:10px; width:450px' type="text" class="form-control" name="class_code" [(ngModel)]="product.class_code"
+            placeholder="class_code">
+    </div>
+    <br>
+    <button style='margin-left:16px; width:100px'  routerLink="/home" class="btn btn-secondary">Back</button>    
+    <button style='float: right;margin-right:8px; width:100px' type="submit" routerLink="/home" class="btn btn-success" (click)="addproduct()">Submit</button>
+</form>
+
+</div>
+</div>

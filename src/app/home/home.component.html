@@ -1,0 +1,95 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;">
+  <div>
+    <div *ngIf="CheckLoginStatus()">
+      <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+    </div>
+  </div>
+  <br><br>
+<div class="row">
+  <div class="col-md-8">
+    <div class="col-md-12" align="left">
+      <h1 style="color:rgb(4, 1, 12);">
+        Welcome to Edu Learn, {{loggeduser.name}}
+      </h1>
+      <br><br>
+    </div>
+    <div style='margin-left:20px;'>
+      <h2 *ngIf="!CheckIsAdmin()" style="color:rgb(4, 1, 12);">
+        Enrolled Courses:
+      </h2>
+      <br><br>
+      <h2 *ngIf="CheckIsAdmin()" style="color:rgb(4, 1, 12);">
+        Courses:
+      </h2>
+    </div>
+  </div>
+  <div *ngIf="CheckIsAdmin()" class="col-md-4 float-right">
+    <p align="float-right"><button type="button" class="block" class="btn col-md-12 btn-success"><a routerLink="/createclass"
+          class="nav-link px-2 link-dark">Create new
+          class</a></button></p>
+  </div>
+  <div *ngIf="!CheckIsAdmin()" class="col-md-4 float-right">
+    <form>
+      <br>
+      <p>Please provide class code to join</p>
+      <input type="input" name="username" [(ngModel)]="class_code" placeholder="enter username"
+        style="text-transform:None">
+      <button style='float: right;margin-right:100px;width:700px;'type="button" class="btn col-md-4 float-right btn-success"><a (click)="joinclass()"
+          class="nav-link px-2 link-dark">Join new
+          class</a></button>
+    </form>
+  </div>
+
+
+
+
+</div>
+  <div class="container ">
+    <div class=" row-cols-10 row-cols-sm-2 row-cols-md-1 ">
+
+      <div *ngFor="let classeslist of arr1">
+        <div class=" card col-md-12 card shadow-sm container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <h2 class="card-title" style="color:rgb(4, 1, 12);">Class Name: {{classeslist.class_name}}</h2>
+              <p class="card-text" style="color:rgb(4, 1, 12);">Students joined: {{classeslist.student_count}}
+              </p>
+
+              <p class="card-text">Branch: {{classeslist.branch}}<br>
+                Faculty Name: {{classeslist.faculty_name}}</p>
+
+
+            </div>
+            <div class=" float-right">
+              <a [routerLink]="['/classes',classeslist.id]" class="btn col-md-12 btn-success">View assignments and
+                notes</a>
+                <button *ngIf="!CheckIsAdmin()" [routerLink]="['/classes/feedback',classeslist.id]"
+                                    class="btn col-md-12 btn-info">
+                                    Give Anonymous Feedback for the class</button>
+                                    <br><br>
+                <button *ngIf="CheckIsAdmin()" [routerLink]="['/classes/viewfeedback',classeslist.id]"
+                class="btn col-md-12 btn-info">
+                view Anonymous Feedback for the class</button>
+                <br><br>
+                                    
+            </div>
+          </div>
+          <br>
+        </div>
+        <br><br><br>
+      </div>
+      <br>
+  </div>
+</div>

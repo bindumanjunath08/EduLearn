@@ -1,0 +1,44 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;"><br><br>
+  <div>
+    <div *ngIf="CheckLoginStatus()">
+      <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+    </div>
+  </div>
+  <h1>Students submitted</h1>
+<div *ngFor="let classeslist of submittedby">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Student Id</th>
+                <th scope="col">Submitted date</th>
+                <th scope="col">Uploaded assignment file</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th scope="row">1</th>
+                <td>{{classeslist.student_id}}</td>
+                <td>{{classeslist.submitted_date}}</td>
+                <td>Direction file: <a href={{classeslist.file_path}} target="_blank">Download</a></td>
+                <td><a [routerLink]="['/correct',classeslist.id]" class="btn col-md-12 btn-success">
+                        Correct assignment</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>

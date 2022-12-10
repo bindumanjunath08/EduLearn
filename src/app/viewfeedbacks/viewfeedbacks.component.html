@@ -1,0 +1,27 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;"><br><br>
+  
+<div *ngIf="CheckLoginStatus()"class='col-md-12'>
+  <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+<br><br>
+<div class="container mt-5">
+
+<div>
+    
+    <div *ngFor="let classeslist of thisclasses.feedback let i = index;">
+
+            <h2>{{i+1}}.      {{classeslist}}</h2>
+
+</div>
+</div>

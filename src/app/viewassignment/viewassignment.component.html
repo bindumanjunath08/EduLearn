@@ -1,0 +1,55 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;"><br><br>
+    <div>
+        <div *ngIf="CheckLoginStatus()">
+          <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+        </div>
+      </div>
+      <div class="container mt-5">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7">
+            <div class="card p-3 py-4">
+                <div class="text-center mt-3">
+                    <h1>Assignment Name: {{ass1.name}}</h1>
+                </div>
+                <div *ngIf="marks()" class="text-center px-4 mt-1">
+                    <h4>Marks : {{history.marks}}
+                    </h4>
+                    </div>
+                <div *ngIf="history.remarks" class="text-center px-4 mt-1">
+                    <h4>Remarks : {{history.remarks}}
+                    </h4>
+                </div>
+                <div *ngIf="history.teacher_viewed" class="text-center px-4 mt-1">
+                    <h4>Viewed by teacher : {{history.teacher_viewed}}</h4>
+                </div>
+                <div *ngIf="history.file_path" class="text-center px-4 mt-1">
+                    <h4 class="card-text">Submitted file : <a href={{history.file_path}}
+                            target="_blank">Download</a><br></h4>
+                    <br>
+                </div>
+
+                <div *ngIf="!history.file_path" class="text-center">
+                    <input class="form-control" type="file" (change)="onChange($event)">
+                </div>
+                <div class="text-center buttons"> <button routerLink="/home"
+                        class="btn btn-outline-primary px-4">Back</button>
+                    <button *ngIf="!history.remarks" routerLink="/home" (click)="onUpload()" class="btn btn-primary px-4 ms-3">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

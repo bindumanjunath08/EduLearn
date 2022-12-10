@@ -1,0 +1,33 @@
+<div style="background-image: url('https://www.ellenfinkelstein.com/pptblog/wp-content/uploads/2014/02/blue-gradient-background.png');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;min-width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 100%;
+  min-height: 100%;">
+<div>
+  <div *ngIf="CheckLoginStatus()">
+    <button (click)="logout()" class="float-right btn btn-danger"> Logout</button>
+  </div>
+</div>
+<br><br><br><br><br><br>
+  <div class="col-md-12"style="justify-content: center;display:flex;"> 
+<form>
+
+        <br><br><br><br><br><br>
+        <label for="id">Username</label>
+        <input style='width:300px'type="text" class="form-control" name="id" [(ngModel)]="id" placeholder="Username">
+        <br>
+        <button (click)="namethis()"  style='width:300px'class="btn btn-success">Update</button>
+    
+    
+</form>
+</div>
+
+
